@@ -1,0 +1,49 @@
+\documentclass[a4paper]{report}
+\input{structure/structure.tex}
+\input{structure/commands.tex}
+
+
+\title{
+\vfil
+\begin{center}
+        \textbf{{\color{mygray}\fontsize{32}{60}\selectfont Title}}
+\end{center}
+\begin{center}
+        \textbf{{\color{mygray}\fontsize{25}{60}\selectfont SubTitle}}
+\end{center}
+\begin{center}
+        \textbf{{\color{mygray}\fontsize{24}{60}\selectfont Info}}
+\end{center}
+}
+\author{LastName FirstName}
+\date{Date}
+
+
+\begin{document}
+%------------------------------------------------------------------------------
+%	First Page
+%------------------------------------------------------------------------------
+\maketitle
+\newpage
+
+\rfoot{\thepage \hspace{1pt}/\pageref{LastPage}}
+\lfoot{\small\textcolor{gray}{Infos ~\\ LastName FirstName}}
+\fancyfoot[C]{logo1}
+\rhead{logo2}
+\lhead{}
+\setlength{\headheight}{7.50mm}
+
+\tableofcontents
+\def\table{\def\figurename{Table}\figure}
+\let\endtable\endfigure 
+\listoffigures
+%------------------------------------------------------------------------------
+%	STRUCTURE
+%-----------------------------------------------------------------------------
+\input{Part/example.tex}
+
+\renewcommand\bibname{References} % For modifying the bibliography heading
+\bibliographystyle{unsrt}
+\bibliography{Appendice/reference.bib} % The file containing the bibliography
+\nocite{*}
+\end{document}
